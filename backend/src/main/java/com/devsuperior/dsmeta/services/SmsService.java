@@ -26,11 +26,11 @@ public class SmsService {
 	private String twilioPhoneTo;
 	
 	@Autowired
-	private SaleRepository salerepository;
+	private SaleRepository saleRepository;
 
 	public void sendSms(Long saleId) {
 		
-		Sale sale = saleRepository.findById(saleId).get()
+		Sale sale = saleRepository.findById(saleId).get();
 		
 		String date = sale.getDate().getMonthValue() + "/" + sale.getDate().getYear();
 		
